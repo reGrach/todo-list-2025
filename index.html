@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои дела</title>
     <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
 </head>
 <body>
     <div class="main">
@@ -13,12 +14,47 @@
             <input id="input-task" placeholder="Новая задача..." />
             <button id="add-btn">Добавить</button>
         </div>
-        <ul>
-            <li><span>Купить зимние ботинки</span></li>
-            <li><span>Купить куртку зимнию</span></li>
-            <li><span>Убраться дома</span></li>
-            <li><span>Поспать</span></li>
-            <li><span>Проснуться</span></li>
+        <ul class="task-list">
+            <li class="task-item">
+                <span class="task-content">Купить зимние ботинки</span>
+                <div class="task-actons">
+                    <button class="task-btn">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </div>
+            </li>
+            <li class="task-item">
+                <span class="task-content">Купить куртку зимнию</span>
+                <div class="task-actons">
+                    <button class="task-btn">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </div>
+            </li>
+            <li class="task-item">
+                <span class="task-content">Убраться дома</span>
+                <div class="task-actons">
+                    <button class="task-btn">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </div>
+            </li>
+            <li class="task-item">
+                <span class="task-content">Поспать</span>
+                <div class="task-actons">
+                    <button class="task-btn">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </div>
+            </li>
+            <li class="task-item">
+                <span class="task-content">Проснуться</span>
+                <div class="task-actons">
+                    <button class="task-btn">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </div>
+            </li>
         </ul>
     </div>
 </body>
