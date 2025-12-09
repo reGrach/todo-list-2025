@@ -131,3 +131,34 @@ body {
     cursor: pointer;
     opacity: 0.8;
 }
+
+.task-item.high-priority {
+    border-left: 8px solid #FF6B6B;
+}
+
+.task-item.medium-priority {
+    border-left: 8px solid #ebff6b;
+}
+
+.task-item.low-priority {
+    border-left: 8px solid #84ff6b;
+}
+
+.task-item.completed {
+    background-color: #e6e6fa;
+    opacity: 0.7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.task-item.completed .task-content {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list:not(:has(>*))::before {
+    content: "Пока нет задач. Самое время их добавить!";
+    padding: 30px;
+    display: block;
+    font-style: italic;
+    text-align: center;
+}

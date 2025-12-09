@@ -15,42 +15,42 @@
             <button id="add-btn">Добавить</button>
         </div>
         <ul class="task-list">
-            <li class="task-item">
+            <li class="task-item medium-priority" onclick="this.classList.toggle('completed')">
                 <span class="task-content">Купить зимние ботинки</span>
                 <div class="task-actons">
-                    <button class="task-btn">
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
             </li>
-            <li class="task-item">
+            <li class="task-item medium-priority completed" onclick="this.classList.toggle('completed')">
                 <span class="task-content">Купить куртку зимнию</span>
                 <div class="task-actons">
-                    <button class="task-btn">
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
             </li>
-            <li class="task-item">
+            <li class="task-item low-priority" onclick="this.classList.toggle('completed')">
                 <span class="task-content">Убраться дома</span>
                 <div class="task-actons">
-                    <button class="task-btn">
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
             </li>
-            <li class="task-item">
+            <li class="task-item high-priority completed" onclick="this.classList.toggle('completed')">
                 <span class="task-content">Поспать</span>
                 <div class="task-actons">
-                    <button class="task-btn">
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
             </li>
-            <li class="task-item">
+            <li class="task-item high-priority" onclick="this.classList.toggle('completed')">
                 <span class="task-content">Проснуться</span>
                 <div class="task-actons">
-                    <button class="task-btn">
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
