@@ -21,8 +21,8 @@ const addButton = document.getElementById("add-btn");
 const inputTaskEl = document.getElementById("input-task");
 addButton.onclick = addTask;
 
-let tasks = taskStorage.get();
-tasks.forEach(task => createTaskElement(task));
+let TASKS = taskStorage.get();
+TASKS.forEach(task => createTaskElement(task));
 
 document.addEventListener('keydown',
     (ev) => {
@@ -42,8 +42,8 @@ function addTask() {
         };
 
         createTaskElement(task);
-        tasks.push(task);
-        taskStorage.save(tasks);
+        TASKS.push(task);
+        taskStorage.save(TASKS);
 
         inputTaskEl.value = null;
     }
@@ -60,14 +60,25 @@ function createTaskElement(task) {
 
     newTaskEl.addEventListener('click', (ev) => {
         ev.currentTarget.classList.toggle('completed');
+        task.isCompleted = !task.isCompleted;
+        taskStorage.save(TASKS);
     });
 
     newTaskEl.innerHTML = `
     <span class="task-content">${task.title}</span>
     <div class="task-actons">
-        <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
+        <button class="task-btn">
             <span class="material-symbols-outlined">delete</span>
         </button>
     </div>`
+
+    newTaskEl
+        .querySelector('button.task-btn')
+        .addEventListener('click', (ev) => {
+            ev.currentTarget.parentNode.parentNode.remove();
+            TASKS = TASKS.filter(x => x.title != task.title);
+            taskStorage.save(TASKS);
+        });
+
     taskListEl.append(newTaskEl);
 }
