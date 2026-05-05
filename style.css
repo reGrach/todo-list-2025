@@ -162,3 +162,8 @@ body {
     font-style: italic;
     text-align: center;
 }
+
+.task-actons {
+    display: flex;
+    gap: 10px; 
+}
