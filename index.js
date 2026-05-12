@@ -70,6 +70,9 @@ function createTaskElement(task) {
         <button class="task-btn btn-change-priority">
             <span class="material-symbols-outlined">arrow_shape_up_stack</span>
         </button>
+        <button class="task-btn btn-edit">
+            <span class="material-symbols-outlined">edit</span>
+        </button>
         <button class="task-btn btn-delete">
             <span class="material-symbols-outlined">delete</span>
         </button>
@@ -109,6 +112,27 @@ function createTaskElement(task) {
             }
 
             taskStorage.save(TASKS);
+        });
+
+    newTaskEl
+        .querySelector('button.btn-edit')
+        .addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            const newTitle = prompt('Изменить задачу', task.title);
+
+            if (newTitle.trim()) {
+                task.title = newTitle;
+
+                ev.currentTarget
+                    .parentNode
+                    .parentNode
+                    .querySelector('span.task-content')
+                    .innerText = newTitle;
+    
+                taskStorage.save(TASKS);
+            }
         });
 
     taskListEl.append(newTaskEl);
